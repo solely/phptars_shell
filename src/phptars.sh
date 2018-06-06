@@ -39,8 +39,8 @@ installPHPTars(){
         ${mysql_install_dir}/bin/mysql -uroot -p${mysql_root_pwd} -e "drop database if exists tars_stat;"
 
         cd cpp/framework/sql
-        sed -i "s/192.168.2.131/${MachineIp}/g" `grep 192.168.2.131 -rl ./*`
-        sed -i "s/db.tars.com/${MachineIp}/g" `grep db.tars.com -rl ./*`
+        sed -i "s/192.168.2.131/${machine_ip}/g" `grep 192.168.2.131 -rl ./*`
+        sed -i "s/db.tars.com/${machine_ip}/g" `grep db.tars.com -rl ./*`
         sed -i "s/root@appinside/${mysql_root_pwd}/g" exec-sql.sh
         chmod u+x exec-sql.sh
         /bin/bash exec-sql.sh
